@@ -400,7 +400,7 @@ export default function Home() {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-stone-500 text-xs">Vertrauen von über 200+ Verwaltungen</p>
+                  <p className="text-stone-500 text-xs">Jetzt kostenlos testen</p>
                 </div>
               </div>
             </div>
@@ -751,7 +751,7 @@ export default function Home() {
             Kostenlos 14 Tage testen — keine Kreditkarte nötig.
           </p>
           <p className="text-stone-500 text-base mb-10">
-            Über 200 Hausverwaltungen nutzen Immofix bereits täglich.
+            Starten Sie heute noch — kostenlos und ohne Kreditkarte.
             Werden Sie Teil der digitalen Zukunft.
           </p>
 
