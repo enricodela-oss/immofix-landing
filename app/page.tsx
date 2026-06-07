@@ -339,7 +339,7 @@ export default function Home() {
             <div className="absolute -inset-4 bg-white/10 rounded-[40px] blur-2xl" />
 
             {/* Logo */}
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-[48px] overflow-hidden shadow-2xl shadow-white/10">
+            <div className="relative w-[45vh] h-[45vh] max-w-[480px] max-h-[480px] rounded-[18%] overflow-hidden shadow-2xl shadow-white/10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo.png"
