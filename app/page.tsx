@@ -324,7 +324,7 @@ export default function Home() {
       </nav>
 
       {/* ── 2. LOGO HERO ─────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden pt-16">
+      <section className="relative min-h-[75vh] bg-black flex flex-col items-center justify-center overflow-hidden pt-16">
 
         {/* Radialer Hintergrund-Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_42%,rgba(255,255,255,0.07)_0%,transparent_70%)]" />
@@ -335,7 +335,7 @@ export default function Home() {
           {/* Logo */}
           <div className="relative">
             <div className="absolute -inset-16 bg-white/5 rounded-full blur-3xl" />
-            <div className="relative w-[55vh] h-[55vh] max-w-[520px] max-h-[520px] rounded-[20%] overflow-hidden">
+            <div className="relative w-[42vh] h-[42vh] max-w-[420px] max-h-[420px] rounded-[20%] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo.png" alt="Immofix" className="w-full h-full object-cover" />
               {/* Lichtzug */}
