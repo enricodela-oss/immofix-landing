@@ -643,7 +643,7 @@ export default function Home() {
             {[
               {
                 name: "Starter",
-                price: "29",
+                price: "59",
                 period: "/Monat",
                 tagline: "Perfekt für den Einstieg",
                 highlighted: false,
@@ -660,13 +660,13 @@ export default function Home() {
               },
               {
                 name: "Professional",
-                price: "79",
+                price: "129",
                 period: "/Monat",
                 tagline: "Für wachsende Verwaltungen",
                 highlighted: true,
                 badge: "Beliebteste Wahl",
                 features: [
-                  "Bis zu 25 Gebäude",
+                  "Bis zu 15 Gebäude",
                   "Alle Starter-Features",
                   "Handwerker-Abnahme QR",
                   "PDF-Monatsberichte",
@@ -678,7 +678,7 @@ export default function Home() {
               },
               {
                 name: "Enterprise",
-                price: "199",
+                price: "249",
                 period: "/Monat",
                 tagline: "Für große Verwaltungen",
                 highlighted: false,
