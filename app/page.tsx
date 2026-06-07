@@ -390,7 +390,7 @@ export default function Home() {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <a
-                  href="#preise"
+                  href="https://immobilienverwaltung-blush.vercel.app/signup"
                   className="inline-flex items-center justify-center gap-2 bg-stone-900 text-white px-8 py-4 rounded-xl text-base font-bold hover:bg-stone-700 transition-all hover:-translate-y-0.5 shadow-lg shadow-stone-200"
                 >
                   Jetzt kostenlos starten
@@ -737,7 +737,7 @@ export default function Home() {
                 </ul>
 
                 <a
-                  href="#"
+                  href="https://immobilienverwaltung-blush.vercel.app/signup"
                   className={`block text-center py-3.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-0.5 ${plan.ctaStyle}`}
                 >
                   {plan.cta}
@@ -790,7 +790,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#preise"
+              href="https://immobilienverwaltung-blush.vercel.app/signup"
               className="inline-flex items-center justify-center gap-2 bg-white text-stone-900 px-10 py-4 rounded-xl text-base font-bold hover:bg-stone-100 transition-all hover:-translate-y-0.5 shadow-lg shadow-black/20"
             >
               Jetzt kostenlos starten
