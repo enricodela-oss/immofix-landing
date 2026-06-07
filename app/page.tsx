@@ -326,9 +326,9 @@ export default function Home() {
       {/* ── 2. HERO ───────────────────────────────────────────────────────── */}
       <section
         id="demo"
-        className="min-h-screen flex items-center bg-gradient-to-br from-stone-50 via-white to-stone-100 pt-16"
+        className="min-h-screen flex items-start bg-gradient-to-br from-stone-50 via-white to-stone-100 pt-16"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full pt-10 pb-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Copy */}
             <div className="order-2 lg:order-1">
