@@ -323,7 +323,40 @@ export default function Home() {
         )}
       </nav>
 
-      {/* ── 2. HERO ───────────────────────────────────────────────────────── */}
+      {/* ── 2. LOGO HERO ─────────────────────────────────────────────────── */}
+      <section className="relative bg-white flex flex-col items-center justify-center overflow-hidden pt-24 pb-16">
+
+        {/* Subtiler radialer Glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_40%,rgba(0,0,0,0.03)_0%,transparent_70%)]" />
+
+        <div className="relative flex flex-col items-center gap-6">
+
+          {/* Logo mit Lichteffekt */}
+          <div className="relative">
+            <div className="absolute -inset-12 bg-black/5 rounded-full blur-3xl" />
+            <div className="relative w-[42vh] h-[42vh] max-w-[380px] max-h-[380px] rounded-[20%] overflow-hidden shadow-xl shadow-black/10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Immofix" className="w-full h-full object-cover" />
+              {/* Lichtzug-Animation */}
+              <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+              {/* Obere Licht-Reflexion */}
+              <div className="absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-white/25 to-transparent pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Text — schwarz auf weiß */}
+          <div className="text-center">
+            <h2 className="text-stone-900 text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-3">
+              Immofix
+            </h2>
+            <p className="text-stone-500 text-base sm:text-lg font-light">
+              Schadensmeldungen. Digital. Sofort.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. HERO ───────────────────────────────────────────────────────── */}
       <section
         id="demo"
         className="min-h-screen flex items-start bg-gradient-to-br from-stone-50 via-white to-stone-100 pt-16"
