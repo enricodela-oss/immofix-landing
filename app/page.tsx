@@ -643,7 +643,7 @@ export default function Home() {
             {[
               {
                 name: "Starter",
-                price: "59",
+                price: "79",
                 period: "/Monat",
                 tagline: "Perfekt für den Einstieg",
                 highlighted: false,
@@ -660,7 +660,7 @@ export default function Home() {
               },
               {
                 name: "Professional",
-                price: "129",
+                price: "179",
                 period: "/Monat",
                 tagline: "Für wachsende Verwaltungen",
                 highlighted: true,
@@ -678,7 +678,7 @@ export default function Home() {
               },
               {
                 name: "Enterprise",
-                price: "249",
+                price: "349",
                 period: "/Monat",
                 tagline: "Für große Verwaltungen",
                 highlighted: false,
