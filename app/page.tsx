@@ -324,52 +324,43 @@ export default function Home() {
       </nav>
 
       {/* ── 2. LOGO HERO ─────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden pt-16">
 
         {/* Radialer Hintergrund-Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,255,255,0.06)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_42%,rgba(255,255,255,0.07)_0%,transparent_70%)]" />
 
-        {/* Logo mit Licht-Effekt */}
-        <div className="relative flex flex-col items-center gap-10">
+        {/* Logo + Text */}
+        <div className="relative flex flex-col items-center gap-5">
 
-          {/* Logo Container */}
+          {/* Logo */}
           <div className="relative">
-            {/* Glow hinter dem Logo */}
-            <div className="absolute -inset-8 bg-white/5 rounded-full blur-3xl" />
-            <div className="absolute -inset-4 bg-white/10 rounded-[40px] blur-2xl" />
-
-            {/* Logo */}
-            <div className="relative w-[45vh] h-[45vh] max-w-[480px] max-h-[480px] rounded-[18%] overflow-hidden shadow-2xl shadow-white/10">
+            <div className="absolute -inset-16 bg-white/5 rounded-full blur-3xl" />
+            <div className="relative w-[55vh] h-[55vh] max-w-[520px] max-h-[520px] rounded-[20%] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo.png"
-                alt="Immofix"
-                className="w-full h-full object-cover"
-              />
-              {/* Lichtzug-Animation */}
-              <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-              {/* Dauerhafte obere Licht-Reflexion */}
-              <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/15 to-transparent pointer-events-none" />
+              <img src="/logo.png" alt="Immofix" className="w-full h-full object-cover" />
+              {/* Lichtzug */}
+              <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/35 to-transparent pointer-events-none" />
+              {/* Obere Licht-Reflexion */}
+              <div className="absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
             </div>
           </div>
 
-          {/* Textblock */}
-          <div className="text-center space-y-3">
-            <h2 className="text-white text-4xl sm:text-5xl font-black tracking-tight">
+          {/* Text — kompakt wie bei Apple */}
+          <div className="text-center mt-2">
+            <h2 className="text-white/40 text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-3">
               Immofix
             </h2>
-            <p className="text-white/40 text-lg font-light tracking-wide">
-              Digitale Schadensmeldung
+            <p className="text-white text-base sm:text-lg font-light max-w-sm mx-auto leading-relaxed">
+              Schadensmeldungen. Digital. Sofort.
             </p>
           </div>
+        </div>
 
-          {/* Scroll-Hinweis */}
-          <div className="absolute bottom-[-40vh] flex flex-col items-center gap-2 opacity-30">
-            <span className="text-white text-xs uppercase tracking-widest font-medium">Mehr entdecken</span>
-            <svg className="w-5 h-5 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
+        {/* Scroll-Pfeil unten */}
+        <div className="absolute bottom-8 flex flex-col items-center gap-1.5 opacity-25">
+          <svg className="w-5 h-5 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+          </svg>
         </div>
       </section>
 
