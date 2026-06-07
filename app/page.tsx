@@ -323,7 +323,57 @@ export default function Home() {
         )}
       </nav>
 
-      {/* ── 2. HERO ───────────────────────────────────────────────────────── */}
+      {/* ── 2. LOGO HERO ─────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden">
+
+        {/* Radialer Hintergrund-Glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,255,255,0.06)_0%,transparent_70%)]" />
+
+        {/* Logo mit Licht-Effekt */}
+        <div className="relative flex flex-col items-center gap-10">
+
+          {/* Logo Container */}
+          <div className="relative">
+            {/* Glow hinter dem Logo */}
+            <div className="absolute -inset-8 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute -inset-4 bg-white/10 rounded-[40px] blur-2xl" />
+
+            {/* Logo */}
+            <div className="relative w-44 h-44 rounded-[36px] overflow-hidden shadow-2xl shadow-white/10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo.png"
+                alt="Immofix"
+                className="w-full h-full object-cover"
+              />
+              {/* Lichtzug-Animation */}
+              <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+              {/* Dauerhafte obere Licht-Reflexion */}
+              <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/15 to-transparent pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Textblock */}
+          <div className="text-center space-y-3">
+            <h2 className="text-white text-4xl sm:text-5xl font-black tracking-tight">
+              Immofix
+            </h2>
+            <p className="text-white/40 text-lg font-light tracking-wide">
+              Digitale Schadensmeldung
+            </p>
+          </div>
+
+          {/* Scroll-Hinweis */}
+          <div className="absolute bottom-[-40vh] flex flex-col items-center gap-2 opacity-30">
+            <span className="text-white text-xs uppercase tracking-widest font-medium">Mehr entdecken</span>
+            <svg className="w-5 h-5 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. HERO ───────────────────────────────────────────────────────── */}
       <section
         id="demo"
         className="min-h-screen flex items-center bg-gradient-to-br from-stone-50 via-white to-stone-100 pt-16"
