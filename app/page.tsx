@@ -283,7 +283,7 @@ export default function Home() {
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="#preise"
+                href="/login"
                 className="text-stone-700 hover:text-stone-900 text-sm font-medium transition-colors"
               >
                 Anmelden
