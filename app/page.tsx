@@ -56,6 +56,14 @@ function IconCheck() {
   );
 }
 
+function IconShield() {
+  return (
+    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>
+  );
+}
+
 function IconCheckSmall({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -368,7 +376,7 @@ export default function Home() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-stone-100 border border-stone-200 rounded-full px-4 py-1.5 mb-8">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-stone-600 text-sm font-medium">Neu: Handwerker-Abnahme per QR-Code</span>
+                <span className="text-stone-600 text-sm font-medium">Neu: Versicherungsschadensmeldung per PDF & E-Mail</span>
               </div>
 
               {/* Headline */}
@@ -605,22 +613,126 @@ export default function Home() {
                   "Handwerker scannt nach der Reparatur einen QR-Code, gibt Abschlussbericht ein — Ticket schließt sich automatisch.",
                 highlight: "Vollautomatisch",
               },
+              {
+                icon: <IconShield />,
+                title: "Versicherungsschadensmeldung",
+                description:
+                  "PDF-Bericht automatisch aus Ticketdaten erstellt und direkt per E-Mail an die Gebäudeversicherung gesendet — mit Ihrem Firmenlogo.",
+                highlight: "Neu",
+                isNew: true,
+              },
             ].map((feat, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-6 border border-stone-200 hover:border-stone-400 hover:shadow-lg transition-all group"
+                className={`relative bg-white rounded-2xl p-6 border hover:shadow-lg transition-all group ${"isNew" in feat && feat.isNew ? "border-blue-200 hover:border-blue-400" : "border-stone-200 hover:border-stone-400"}`}
               >
-                <div className="w-12 h-12 bg-stone-100 group-hover:bg-stone-900 rounded-xl flex items-center justify-center mb-5 text-stone-600 group-hover:text-white transition-all">
+                {"isNew" in feat && feat.isNew && (
+                  <span className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wide">NEU</span>
+                )}
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all ${"isNew" in feat && feat.isNew ? "bg-blue-50 group-hover:bg-blue-600 text-blue-600 group-hover:text-white" : "bg-stone-100 group-hover:bg-stone-900 text-stone-600 group-hover:text-white"}`}>
                   {feat.icon}
                 </div>
                 <h3 className="text-stone-900 font-bold text-lg mb-2">{feat.title}</h3>
                 <p className="text-stone-500 text-sm leading-relaxed mb-4">{feat.description}</p>
-                <span className="inline-flex items-center gap-1 text-stone-600 text-xs font-semibold bg-stone-100 px-3 py-1.5 rounded-full">
-                  <IconCheckSmall className="w-3 h-3 text-emerald-500" />
+                <span className={`inline-flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-full ${"isNew" in feat && feat.isNew ? "bg-blue-50 text-blue-700" : "bg-stone-100 text-stone-600"}`}>
+                  <IconCheckSmall className={`w-3 h-3 ${"isNew" in feat && feat.isNew ? "text-blue-500" : "text-emerald-500"}`} />
                   {feat.highlight}
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5b. VERSICHERUNG HIGHLIGHT ────────────────────────────────────── */}
+      <section className="py-24 bg-stone-900 text-white overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-1.5 mb-8">
+                <IconShield />
+                <span className="text-blue-300 text-sm font-semibold">Neu: Versicherungsschadensmeldung</span>
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-black leading-tight tracking-tight mb-6">
+                Schaden an die Versicherung —{" "}
+                <span className="text-stone-400">mit einem Klick.</span>
+              </h2>
+              <p className="text-stone-400 text-lg leading-relaxed mb-8">
+                Immofix erstellt automatisch einen professionellen PDF-Bericht aus dem Ticket —
+                mit Schadensfoto, Beschreibung, Zeitstempel und Reparaturabnahme.
+                Der Bericht geht direkt per E-Mail an Ihre Versicherung, in Ihrem Firmennamen, mit Ihrem Logo.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "PDF-Bericht wird automatisch aus Ticketdaten generiert",
+                  "Schadensfoto, Zeitstempel & Beschreibung inklusive",
+                  "E-Mail geht in Ihrem Firmennamen ab",
+                  "Antworten der Versicherung landen direkt bei Ihnen",
+                  "Versicherungskontakt einmal hinterlegen — fertig",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-stone-300 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center shrink-0 mt-0.5">
+                      <IconCheckSmall className="w-3 h-3 text-emerald-400" />
+                    </div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right: Email preview mockup */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 space-y-0">
+              {/* Email header */}
+              <div className="flex items-center gap-3 pb-5 border-b border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center shrink-0">
+                  <IconShield />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-stone-500 mb-0.5">Versicherungsschadensbericht</p>
+                  <p className="text-sm font-semibold text-white truncate">TKT-0042 · Wasserschaden Bad 2.OG</p>
+                </div>
+                <span className="shrink-0 text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/20 font-medium">Gesendet ✓</span>
+              </div>
+
+              {/* Email meta */}
+              <div className="py-4 space-y-3 border-b border-white/10">
+                {[
+                  ["Von", "Müller Verwaltungs GmbH"],
+                  ["An", "schaden@allianz.de"],
+                  ["Betreff", "Versicherungsschadensmeldung – TKT-0042"],
+                  ["Anhang", "Versicherungsreport-TKT-0042.pdf"],
+                ].map(([label, val]) => (
+                  <div key={label} className="flex gap-4 text-sm">
+                    <span className="text-stone-500 w-16 shrink-0">{label}</span>
+                    <span className="text-stone-200 font-medium truncate">{val}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* PDF preview strip */}
+              <div className="pt-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-3">
+                  <div className="w-10 h-12 bg-stone-700 rounded-lg flex flex-col items-center justify-center shrink-0 gap-1">
+                    <div className="w-5 h-0.5 bg-stone-500 rounded" />
+                    <div className="w-5 h-0.5 bg-stone-500 rounded" />
+                    <div className="w-3 h-0.5 bg-stone-500 rounded" />
+                    <div className="w-4 h-3 bg-stone-600 rounded-sm mt-1" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white">Versicherungsreport-TKT-0042.pdf</p>
+                    <p className="text-xs text-stone-500 mt-0.5">Schadensfoto · Zeitstempel · Abnahmeprotokoll</p>
+                  </div>
+                  <div className="ml-auto">
+                    <div className="w-7 h-7 rounded-lg bg-blue-500/20 border border-blue-400/20 flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
